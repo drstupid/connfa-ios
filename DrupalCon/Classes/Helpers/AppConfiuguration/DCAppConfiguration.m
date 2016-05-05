@@ -80,7 +80,7 @@ static NSBundle* themeBundle;
       kMenuItemControllerId : @"DCProgramViewController",
       kMenuType : @(DCMENU_PROGRAM_ITEM)
     },
-    @{
+    /*@{
       kMenuItemTitle : @"BoFs",
       kMenuItemIcon : @"menu_icon_bofs",
       kMenuItemSelectedIcon : @"menu_icon_bofs_sel",
@@ -93,9 +93,9 @@ static NSBundle* themeBundle;
       kMenuItemSelectedIcon : @"menu_icon_social_sel",
       kMenuItemControllerId : @"DCProgramViewController",
       kMenuType : @(DCMENU_SOCIAL_EVENTS_ITEM)
-    },
+    },*/
     @{
-      kMenuItemTitle : @"Speakers",
+      kMenuItemTitle : @"Speakers & Mentors",
       kMenuItemIcon : @"menu_icon_speakers",
       kMenuItemSelectedIcon : @"menu_icon_speakers_sel",
       kMenuItemControllerId : @"SpeakersViewController",

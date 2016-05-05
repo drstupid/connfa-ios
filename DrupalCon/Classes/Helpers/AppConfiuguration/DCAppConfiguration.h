@@ -1,10 +1,10 @@
 
 #import <Foundation/Foundation.h>
 
-#define SERVER_URL @"http://drupalconbarcelona2015.uat.link"
+#define SERVER_URL @"http://46.101.230.21"
 #define BUNDLE_NAME @"DC-Theme"
 
-#define BASE_URL [NSString stringWithFormat:@"%@/api/v2/", SERVER_URL]
+#define BASE_URL [NSString stringWithFormat:@"%@/api/", SERVER_URL]
 
 @interface DCAppConfiguration : NSObject
 
