@@ -148,7 +148,7 @@ NSString* kCalendarIdKey = @"CalendarIdKey";
 
   if (error && error.code == 17) {
     [self showAlertWithTitle:@"Attention"
-                     message:@"DrupalCon calendar was not created because app "
+                     message:@"HackTM calendar was not created because app "
                      @"does not have rights to access your calendar "
                      @"account. Go to "
                      @"Settings->Mail,Contacts,Calendars->Account and "
