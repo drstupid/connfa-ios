@@ -1,7 +1,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define SERVER_URL @"http://46.101.230.21"
+#define SERVER_URL @"http://localhost:5000"
 #define BUNDLE_NAME @"DC-Theme"
 
 #define BASE_URL [NSString stringWithFormat:@"%@/api/", SERVER_URL]

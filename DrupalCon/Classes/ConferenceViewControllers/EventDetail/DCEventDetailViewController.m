@@ -102,7 +102,7 @@ static NSString* cellIdDescription = @"DetailCellIdDescription";
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
-  return UIStatusBarStyleDefault;
+  return UIStatusBarStyleLightContent;
 }
 
 #pragma mark - UI initialization
@@ -412,12 +412,25 @@ static NSString* cellIdDescription = @"DetailCellIdDescription";
 }
 
 - (void)shareButtonDidClick {
-  NSString* invitation = @"Hey, just thought this may be interesting for you: ";
-  NSURL* url = [NSURL URLWithString:self.event.link];
+  NSString* invitation = @"Hey, just thought this session of <a href=\"http://www.hacktm.ro\">HackTM 2016</a> may be interesting for you: ";
+    NSString* title = self.event.name;
+    
+    NSString* date = self.event.date ? [DCDateHelper convertDate:self.event.date toApplicationFormat:@"EEE, dd.MM.YYYY"] : @"";
+    NSString* startTime = [DCDateHelper convertDate:self.event.startDate toApplicationFormat:@"h:mm aaa"];
+    NSString* endTime = [DCDateHelper convertDate:self.event.endDate toApplicationFormat:@"h:mm aaa"];
+    date = [NSString stringWithFormat:@"%@, %@ - %@", [date uppercaseString],
+            startTime, endTime];
+    
+    NSString* place = self.event.place ? [NSString stringWithFormat:@" in %@",  self.event.place] : @"";
+    
+    NSString* moreInfo = self.event.place ? [NSString stringWithFormat:@"For more info, visit <a href=\"%@\">%@</a>", self.event.link, self.event.link] : @"";
+    
+    
+    NSString* fullText = [NSString stringWithFormat:@"<html><body>%@<br/><br/><b>%@</b><br/>%@%@<br/><br/>%@<br/><br/>%@</body></html>", invitation, title, date, place, self.event.desctiptText, moreInfo];
 
   UIActivityViewController* activityController =
       [[UIActivityViewController alloc]
-          initWithActivityItems:@[ invitation, url ]
+          initWithActivityItems:@[ fullText ]
           applicationActivities:nil];
 
   //    So we have:

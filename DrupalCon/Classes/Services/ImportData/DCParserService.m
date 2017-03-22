@@ -29,6 +29,9 @@
                                                              options:kNilOptions
                                                                error:&err];
   dictionary = [dictionary dictionaryByReplacingNullsWithStrings];
+    if (err){
+        NSLog(@"error\n%@", err.description);
+    }
   callback(err, dictionary);
 }
 

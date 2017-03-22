@@ -128,9 +128,10 @@
   aController.navigationItem.title = title;
 
   // add left Menu button to all Controllers
-  UIImage* image = (menuItem == DCMENU_INFO_ITEM)
+    UIImage* image = [UIImage imageNamedFromBundle:@"menu-icon"];
+                        /*(menuItem == DCMENU_INFO_ITEM)
                        ? [UIImage imageNamedFromBundle:@"menu-icon-dark"]
-                       : [UIImage imageNamedFromBundle:@"menu-icon"];
+                       : [UIImage imageNamedFromBundle:@"menu-icon"];*/
   UIButton* button = [[UIButton alloc]
       initWithFrame:CGRectMake(0, 0, image.size.width, image.size.height)];
   [button setBackgroundImage:image forState:UIControlStateNormal];
@@ -310,7 +311,7 @@
   else if (IS_STANDARD_IPHONE_6_PLUS)
     return 300 + offsetHeight;
   else
-    return 80 + offsetHeight;
+    return 60 + offsetHeight;
 }
 
 @end

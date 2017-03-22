@@ -33,7 +33,7 @@
   if (speaker.organizationName.length)
     [jobAndCompany
         appendString:speaker.jobTitle.length
-                         ? [NSString stringWithFormat:@" at %@",
+                         ? [NSString stringWithFormat:@" / %@",
                                                       speaker.organizationName]
                          : speaker.organizationName];
   self.jobAndCompanyLabel.text = jobAndCompany;
